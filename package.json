@@ -10,7 +10,10 @@
     "db:create": "dotenv -e .env.development -- npx prisma db push",
     "db:create:test": "dotenv -e .env.test -- npx prisma db push",
     "db:migrate": "dotenv -e .env.development -- npx prisma migrate dev",
-    "db:migrate:test": "dotenv -e .env.test -- npx prisma migrate deploy"
+    "db:migrate:test": "dotenv -e .env.test -- npx prisma migrate deploy",
+    "lint": "biome lint -- apply ./app",
+    "format": "biome format ./app --write",
+    "check": "biome check --apply ./app"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -22,6 +25,7 @@
     "react-router": "^7.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@react-router/dev": "^7.0.1",
     "@types/node": "^20",
     "@types/react": "^18.3.12",
